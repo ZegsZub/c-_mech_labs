@@ -92,7 +92,8 @@ long long ex_b_v2(long long n)
     return res;
 }
 
-
+//как обказалось pow() значительно замидляет вычисления
+//примерно в 3 раза
 double ex_v(double n) {
     double res = 1;
     while (n) {
@@ -101,6 +102,29 @@ double ex_v(double n) {
     }
     return res;
 }
+
+double ex_v_v2(double n) {
+    double res = 1;
+    while (n) {
+        res *= 1 + (1 / (n * n));
+        n--;
+    }
+    return res;
+}
+
+double ex_g(double n) {
+    double res = 0;
+    double b;
+    for (int i = 1; i <= n; ++i) {
+        if (i==1)
+            b = sin(i);
+        b += sin(i);
+        res += 1/b;
+        }
+    return res;
+}
+
+
 
 //тесты показали, что рекусивный вызов не лучший вариант, работает он в два раза дольше обычного цикла.
 double ex_d(double n, double res=0) {
@@ -119,6 +143,31 @@ double ex_d_v2(double n)
     for (int i=2; i<=n; i++)
     {
         res = sqrt(2+res);
+    }
+    return res;
+}
+
+double ex_e(double n) {
+    double res = 0;
+    double a;
+    double b;
+    for (int i = 1; i <= n; ++i) {
+        if (i==1)
+        {
+            a = cos(i);
+            b = sin(i);
+        }
+        a += cos(i);
+        b += sin(i);
+        res += a/b;
+    }
+    return res;
+}
+
+double ex_ge(double n) {
+    double res = sqrt(3 * n);
+    for (int i = 1; i <= n; i++) {
+        res = sqrt(3*(n-i) + res);
     }
     return res;
 }
