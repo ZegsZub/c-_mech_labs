@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    int a = 5;
+    int a = 5 ;
     int runs = 100;
 
     auto begin1 = std::chrono::steady_clock::now();
