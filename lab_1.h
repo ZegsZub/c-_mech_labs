@@ -5,7 +5,6 @@
 #include <iostream>
 #include <cmath>
 
-
 using namespace std;
 
 int ex1(){
@@ -18,7 +17,6 @@ int ex1(){
     }
 
 }
-
 
 int ex2(){
     long int a, b, i;
