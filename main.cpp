@@ -14,19 +14,19 @@ int main()
     auto begin1 = std::chrono::steady_clock::now();
     double b;
     for (int i=1; i<=runs; i++){
-        b = ex_b(a);
+        b = ex_e(a);
     }
     auto end1 = std::chrono::steady_clock::now();
+    auto elapsed_ms1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end1 - begin1);
 
     auto begin2 = std::chrono::steady_clock::now();
     double bb;
     for (int i=1; i<=runs; i++){
-        bb = ex_b_v2(a);
+        bb = ex_e(a);
     }
     auto end2 = std::chrono::steady_clock::now();
-
-    auto elapsed_ms1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end1 - begin1);
     auto elapsed_ms2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end2 - begin2);
+    
     long int time_run1 = elapsed_ms1.count();
     long int time_run2 = elapsed_ms2.count();
 
