@@ -8,13 +8,13 @@ using namespace std;
 
 int main()
 {
-    int a = 20 ;
-    int runs = 1000000;
+    int a = 15;
+    int runs = 10;
 
     auto begin1 = chrono::steady_clock::now();
     double b;
     for (int i=1; i<=runs; i++){
-        b = ex_a(a);
+        b = ex_ge(a);
     }
     auto end1 = chrono::steady_clock::now();
     auto elapsed_ms1 = chrono::duration_cast<chrono::milliseconds>(end1 - begin1);

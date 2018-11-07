@@ -113,11 +113,8 @@ double ex_v_v2(double n) {
 }
 
 double ex_g(double n) {
-    double res = 0;
-    double b;
+    double res = 0, b = 0;
     for (int i = 1; i <= n; ++i) {
-        if (i==1)
-            b = sin(i);
         b += sin(i);
         res += 1/b;
         }
@@ -147,26 +144,19 @@ double ex_d_v2(double n)
     return res;
 }
 
-double ex_e(double n) {
-    double res = 0;
-    double a;
-    double b;
+double ex_e(int n) {
+    double res = 1, a = 0, b = 0;
     for (int i = 1; i <= n; ++i) {
-        if (i==1)
-        {
-            a = cos(i);
-            b = sin(i);
-        }
         a += cos(i);
         b += sin(i);
-        res += a/b;
+        res *= a/b;
     }
     return res;
 }
 
 double ex_ge(double n) {
     double res = sqrt(3 * n);
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i <= n-1; i++) {
         res = sqrt(3*(n-i) + res);
     }
     return res;
